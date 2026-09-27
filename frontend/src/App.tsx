@@ -97,7 +97,7 @@ function App({ settings }: { settings: SiteSettings }) {
                 <a className="button button--ghost" href={CONTACTS.phoneHref}><Icon name="phone" /> Позвонить</a>
               </div>
               <div className="hero__trust" aria-label="Преимущества">
-                <div><strong>20 лет</strong><span>опыта в подборе</span></div>
+                <div><strong>20+ лет</strong><span>опыта в подборе</span></div>
                 <div><strong>1 000+</strong><span>положительных отзывов</span></div>
                 <div><strong>VIN</strong><span>проверка применяемости</span></div>
               </div>

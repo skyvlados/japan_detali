@@ -99,7 +99,7 @@ h2 { margin: 0; font-size: clamp(38px, 4vw, 54px); line-height: 1.08; letter-spa
 .about__line--two { bottom: 40px; border-color: var(--blue); transform: rotate(-14deg); }
 .about__stamp { position: absolute; right: 32px; bottom: 28px; width: 128px; height: 128px; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 50%; background: var(--red); color: white; transform: rotate(5deg); }
 .about__stamp strong { font-size: 48px; letter-spacing: -.06em; }
-.about__stamp span { max-width: 42px; overflow-wrap: anywhere; font-size: 11px; line-height: 1.25; font-weight: 800; text-transform: uppercase; }
+.about__stamp span { flex-shrink: 0; width: min-content; overflow-wrap: normal; word-break: normal; hyphens: none; font-size: 11px; line-height: 1.25; font-weight: 800; text-transform: uppercase; }
 .about__copy .eyebrow { margin-bottom: 20px; }
 .about__lead { margin: 28px 0 36px; color: var(--muted); font-size: 16px; line-height: 1.75; }
 .about__lead p { margin: 0; }
@@ -240,7 +240,7 @@ body:has(.messenger-dialog[open]) { overflow: hidden; }
   .category:hover { padding-inline: 0; }
   .about__art { min-height: 340px; }
   .about__circle { left: 10px; top: 30px; transform: scale(.68); }
-  .about__stamp { width: 108px; height: 108px; }
+  .about__stamp { width: 124px; height: 124px; }
   .about__stamp strong { font-size: 41px; }
   .brand-list { gap: 16px 24px; }
   .brand-list span { font-size: 15px; }
