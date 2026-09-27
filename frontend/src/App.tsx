@@ -12,7 +12,7 @@ const categories = [
   ['Редкие детали', 'Поиск деталей для редких моделей, рынков и комплектаций.'],
 ]
 
-const brands = ['Toyota', 'Lexus', 'Nissan', 'Infiniti', 'Honda', 'Acura', 'Mazda', 'Mitsubishi', 'Subaru', 'Suzuki', 'Isuzu', 'Daihatsu']
+const brands = ['Toyota', 'Lexus', 'Nissan', 'Infiniti', 'Honda', 'Acura', 'Mazda', 'Mitsubishi', 'Subaru', 'Suzuki', 'Isuzu', 'Daihatsu', 'Hyundai', 'Kia', 'SsangYong / KGM', 'Daewoo']
 
 function Icon({ name }: { name: 'arrow' | 'check' | 'search' | 'message' | 'phone' | 'mail' | 'menu' | 'close' | 'whatsapp' | 'telegram' }) {
   const paths = {
@@ -53,10 +53,10 @@ function App({ settings }: { settings: SiteSettings }) {
       <header className="header">
         <div className="container header__inner">
           <a href="#top" className="logo" aria-label="Японец — на главную">
-            <img src="/logo.png" alt="Японец — японские автозапчасти" />
+            <img src="/logo.png" alt="Японец — японские и корейские автозапчасти" />
             <span className="logo__copy">
               <strong>Японец</strong>
-              <small>Японские автозапчасти</small>
+              <small>Японские и корейские автозапчасти</small>
             </span>
           </a>
           <nav className="nav" aria-label="Основная навигация">
@@ -89,7 +89,7 @@ function App({ settings }: { settings: SiteSettings }) {
         <section className="hero">
           <div className="container hero__grid">
             <div className="hero__copy">
-              <p className="eyebrow"><span /> Японские автозапчасти · Санкт-Петербург</p>
+              <p className="eyebrow"><span /> Японские и корейские автозапчасти · Санкт-Петербург</p>
               <h1>Найдём деталь.<br/><em>Даже редкую.</em></h1>
               <p className="hero__lead">Подбираем запчасти по VIN, номеру кузова или артикулу. Проверяем совместимость, наличие, цену и срок перед подтверждением.</p>
               <div className="hero__actions">
@@ -121,7 +121,7 @@ function App({ settings }: { settings: SiteSettings }) {
 
         <section className="trust-strip" aria-label="Принципы работы">
           <div className="container trust-strip__inner">
-            <span>Японская специализация</span><i/>
+            <span>Японские и корейские автомобили</span><i/>
             <span>Проверенные аналоги</span><i/>
             <span>Сложные случаи</span><i/>
             <span>Честные сроки</span>
@@ -185,7 +185,7 @@ function App({ settings }: { settings: SiteSettings }) {
 
         <section className="brands" aria-label="Марки автомобилей">
           <div className="container">
-            <p>Работаем с популярными и редкими японскими моделями</p>
+            <p>Работаем с популярными и редкими японскими и корейскими моделями</p>
             <div className="brand-list">{brands.map(brand => <span key={brand}>{brand}</span>)}</div>
           </div>
         </section>
@@ -208,7 +208,7 @@ function App({ settings }: { settings: SiteSettings }) {
             <div className="stores__heading">
               <p className="eyebrow"><span /> Ждём вас в магазине</p>
               <h2 id="stores-heading">Где нас найти</h2>
-              <p>Санкт-Петербург · запчасти для японских автомобилей</p>
+              <p>Санкт-Петербург · запчасти для японских и корейских автомобилей</p>
             </div>
             <div className="stores__list">
               {stores.map(store => {
@@ -246,7 +246,7 @@ function App({ settings }: { settings: SiteSettings }) {
       <footer className="footer">
         <div className="container footer__inner">
           <img src="/logo.png" alt="Японец" />
-          <p>Запчасти для японских автомобилей<br/>в Санкт-Петербурге<br/><a className="footer__email" href={CONTACTS.emailHref}>{CONTACTS.email}</a></p>
+          <p>Запчасти для японских и корейских автомобилей<br/>в Санкт-Петербурге<br/><a className="footer__email" href={CONTACTS.emailHref}>{CONTACTS.email}</a></p>
           <nav><a href="#parts">Запчасти</a><a href="#about">О компании</a><a href="#contacts">Контакты</a></nav>
           <small>© {new Date().getFullYear()} «Японец»</small>
         </div>
