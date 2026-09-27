@@ -103,18 +103,15 @@ function App({ settings }: { settings: SiteSettings }) {
               </div>
             </div>
 
-            <div className="hero__visual" aria-hidden="true">
-              <div className="sun" />
-              <div className="part-card part-card--main">
-                <div className="bearing"><span/><i/><b/></div>
-                <div className="part-card__label"><small>Экспертный подбор</small><strong>Совместимость проверена</strong></div>
-              </div>
-              <div className="part-card part-card--float">
-                <span className="status-dot" />
-                <div><small>Запрос в работе</small><strong>Редкая деталь найдена</strong></div>
-                <Icon name="check" />
-              </div>
-              <p className="visual-note">Не просто продаём —<br/>разбираемся в задаче</p>
+            <div className="hero__visual">
+              <img
+                className="hero__image"
+                src="/land-cruiser-sunrise.jpg"
+                alt="Белый Toyota Land Cruiser 300 поднимается по каменистому склону на восходе солнца"
+                width="1254"
+                height="1254"
+                fetchPriority="high"
+              />
             </div>
           </div>
         </section>
