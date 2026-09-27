@@ -1,5 +1,5 @@
 import { defaultAbout, type About } from './about'
-import type { Store } from './stores'
+import { isYandexMapsUrl, type Store } from './stores'
 import { getContactLinks, getTelegramLink } from './contact-links'
 
 export type SiteSettings = {
@@ -69,6 +69,10 @@ export function parseSettings(value: unknown): SiteSettings {
   if (!Array.isArray(stores) || stores.length === 0 || !stores.every(store =>
     store && ['id', 'name', 'address'].every(key => typeof store[key as keyof Store] === 'string' && String(store[key as keyof Store]).trim()) &&
     typeof store.addressConfirmed === 'boolean' &&
+    (store.mapUrl === undefined || store.mapUrl === '' || isYandexMapsUrl(store.mapUrl)) &&
+    (store.coordinates === undefined || (store.coordinates !== null &&
+      Number.isFinite(store.coordinates.latitude) && Math.abs(store.coordinates.latitude) <= 90 &&
+      Number.isFinite(store.coordinates.longitude) && Math.abs(store.coordinates.longitude) <= 180)) &&
     (store.workingHours === undefined || typeof store.workingHours === 'string') &&
     (store.pavilion === undefined || typeof store.pavilion === 'string') &&
     (store.directions === undefined || typeof store.directions === 'string')
