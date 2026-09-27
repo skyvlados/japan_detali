@@ -151,7 +151,6 @@ h2 { margin: 0; font-size: clamp(38px, 4vw, 54px); line-height: 1.08; letter-spa
 .contact-phone:hover { color: var(--blue); }
 .contact-phone > span { display: flex; flex-direction: column; gap: 3px; }
 .contact-phone strong { font-size: 15px; }
-.contact-note { color: #858d93; font-size: 9px; line-height: 1.5; }
 button { cursor: pointer; }
 .messenger-dialog { width: min(440px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 36px 24px 24px; border: 1px solid #4a5056; border-radius: 22px; background: var(--ink); color: white; }
 .messenger-dialog::backdrop { background: rgba(0,0,0,.55); }

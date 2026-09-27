@@ -201,7 +201,6 @@ function App({ settings }: { settings: SiteSettings }) {
               {messengerLinks}
               {CONTACTS.phones.map((phone, index) => <a className="contact-phone" key={index} href={phone.href}><Icon name="phone" /><span><small>Позвонить менеджеру</small><strong>{phone.label}</strong></span></a>)}
               <a className="contact-phone" href={CONTACTS.emailHref}><Icon name="mail" /><span><small>Написать на email</small><strong>{CONTACTS.email}</strong></span></a>
-              <small className="contact-note">Контактные данные временные и будут заменены перед публикацией.</small>
             </div>
           </div>
           <div className="container stores" aria-labelledby="stores-heading">
