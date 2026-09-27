@@ -250,11 +250,11 @@ function App({ settings }: { settings: SiteSettings }) {
           <nav><a href="#parts">Запчасти</a><a href="#about">О компании</a><a href="#contacts">Контакты</a></nav>
           <small>© {new Date().getFullYear()} «Японец»</small>
         </div>
-        {settings.legal && (
+        {(settings.legal?.name?.trim() || settings.legal?.inn?.trim() || settings.legal?.ogrn?.trim()) && (
           <div className="container footer__legal" aria-label="Реквизиты продавца">
-            <p>{settings.legal.name}</p>
-            <p>ИНН {settings.legal.inn}</p>
-            <p>ОГРНИП {settings.legal.ogrnip}</p>
+            {settings.legal.name?.trim() && <p>{settings.legal.name}</p>}
+            {settings.legal.inn?.trim() && <p>ИНН {settings.legal.inn}</p>}
+            {settings.legal.ogrn?.trim() && <p>ОГРН {settings.legal.ogrn}</p>}
           </div>
         )}
       </footer>

@@ -16,18 +16,21 @@ export type SiteSettings = {
   about: About
   stores: Store[]
   legal?: {
-    name: string
-    inn: string
-    ogrnip: string
+    name?: string
+    inn?: string
+    ogrn?: string
   }
 }
 
 export function parseSettings(value: unknown): SiteSettings {
   if (!value || typeof value !== 'object') throw new Error('Invalid settings')
   const { contacts, stores, legal, about = defaultAbout } = value as SiteSettings
-  if (legal !== undefined && (!legal ||
-    !['name', 'inn', 'ogrnip'].every(key => typeof legal[key as keyof typeof legal] === 'string' && legal[key as keyof typeof legal].trim()))) {
-    throw new Error('Invalid legal details')
+  // Optional public details must not prevent the rest of the site from loading.
+  const legalText = (value: unknown) => typeof value === 'string' ? value.trim() || undefined : undefined
+  const legalDetails = {
+    name: legalText(legal?.name),
+    inn: legalText(legal?.inn),
+    ogrn: legalText(legal?.ogrn),
   }
   const nonempty = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0
   if (!about || ![about.eyebrow, about.title, about.experienceValue, about.experienceLabel].every(nonempty) ||
@@ -79,7 +82,8 @@ export function parseSettings(value: unknown): SiteSettings {
   ) || new Set(stores.map(store => store.id)).size !== stores.length) {
     throw new Error('Invalid stores')
   }
-  return { contacts: { ...contacts, ...contactLinks }, stores, legal, about }
+  return { contacts: { ...contacts, ...contactLinks }, stores,
+    legal: Object.values(legalDetails).some(Boolean) ? legalDetails : undefined, about }
 }
 
 export async function loadSettings(): Promise<SiteSettings> {
