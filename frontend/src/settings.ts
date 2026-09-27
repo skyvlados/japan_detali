@@ -77,7 +77,7 @@ export function parseSettings(value: unknown): SiteSettings {
       Number.isFinite(store.coordinates.latitude) && Math.abs(store.coordinates.latitude) <= 90 &&
       Number.isFinite(store.coordinates.longitude) && Math.abs(store.coordinates.longitude) <= 180)) &&
     (store.workingHours === undefined || typeof store.workingHours === 'string') &&
-    (store.pavilion === undefined || typeof store.pavilion === 'string') &&
+    (store.section === undefined || typeof store.section === 'string') &&
     (store.directions === undefined || typeof store.directions === 'string')
   ) || new Set(stores.map(store => store.id)).size !== stores.length) {
     throw new Error('Invalid stores')

@@ -7,7 +7,7 @@ export type Store = {
   coordinates?: { latitude: number; longitude: number }
   workingHours?: string
   directions?: string
-  pavilion?: string
+  section?: string
 }
 
 export function isYandexMapsUrl(value: unknown): value is string {

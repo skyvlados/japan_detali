@@ -44,7 +44,7 @@
       "addressConfirmed": true,
       "mapUrl": "",
       "coordinates": { "latitude": 59.939131, "longitude": 30.314830 },
-      "pavilion": "",
+      "section": "",
       "workingHours": "10:00–19:00"
     }
   ]

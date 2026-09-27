@@ -218,7 +218,7 @@ function App({ settings }: { settings: SiteSettings }) {
                       <span className="store__label">Магазин «Японец»</span>
                       <h3 id={`store-${store.id}`}>{store.name}</h3>
                       <address>{store.address}</address>
-                      {store.pavilion?.trim() && <p className="store__pavilion">Павильон {store.pavilion.trim()}</p>}
+                      {store.section?.trim() && <p className="store__section">Секция {store.section.trim()}</p>}
                       <div className="store__hours">
                         <h4>График работы</h4>
                         <p>{store.workingHours?.trim() || 'График уточняется — свяжитесь с менеджером перед поездкой.'}</p>

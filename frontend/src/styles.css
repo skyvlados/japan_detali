@@ -170,7 +170,7 @@ body:has(.messenger-dialog[open]) { overflow: hidden; }
 .store h3 { margin: 16px 0; font-size: 25px; letter-spacing: -.03em; }
 .store address { font-style: normal; font-size: 17px; line-height: 1.6; overflow-wrap: anywhere; }
 .store__hours { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
-.store__pavilion { margin: 8px 0 0; font-size: 15px; font-weight: 700; overflow-wrap: anywhere; }
+.store__section { margin: 8px 0 0; font-size: 15px; font-weight: 700; overflow-wrap: anywhere; }
 .store__hours h4 { margin: 0 0 8px; font-size: 13px; }
 .store__hours p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; white-space: pre-line; overflow-wrap: anywhere; }
 .store__directions, .store__notice { color: var(--muted); font-size: 13px; line-height: 1.7; }
