@@ -42,6 +42,8 @@
       "name": "Магазин в Санкт-Петербурге",
       "address": "Санкт-Петербург, Невский проспект, 1",
       "addressConfirmed": true,
+      "mapUrl": "",
+      "coordinates": { "latitude": 59.939131, "longitude": 30.314830 },
       "pavilion": "",
       "workingHours": "10:00–19:00"
     }
