@@ -119,7 +119,7 @@ function App({ settings }: { settings: SiteSettings }) {
         <section className="trust-strip" aria-label="Принципы работы">
           <div className="container trust-strip__inner">
             <span>Японские и корейские автомобили</span><i/>
-            <span>Проверенные аналоги</span><i/>
+            <span>Оригинальные запчасти<br/>и проверенные аналоги</span><i/>
             <span>Сложные случаи</span><i/>
             <span>Честные сроки</span>
           </div>
@@ -183,7 +183,17 @@ function App({ settings }: { settings: SiteSettings }) {
         <section className="brands" aria-label="Марки автомобилей">
           <div className="container">
             <p>Работаем с популярными и редкими японскими и корейскими моделями</p>
-            <div className="brand-list">{brands.map(brand => <span key={brand}>{brand}</span>)}</div>
+            <div className="brand-list">{brands.map(brand => (
+              <span className="brand-list__item" key={brand} title={brand}>
+                <img
+                  src={`/brands/${brand === 'SsangYong / KGM' ? 'ssangyong' : brand.toLowerCase()}.png`}
+                  alt={brand}
+                  width="112"
+                  height="72"
+                  loading="lazy"
+                />
+              </span>
+            ))}</div>
           </div>
         </section>
 

@@ -112,11 +112,17 @@ h2 { margin: 0; font-size: clamp(38px, 4vw, 54px); line-height: 1.08; letter-spa
 
 .brands { padding: 64px 0 74px; border-block: 1px solid var(--line); background: white; text-align: center; }
 .brands p { margin: 0 0 32px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.brand-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 36px; }
-.brand-list span { color: #464d54; font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
+.brand-list { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 24px 28px; align-items: center; }
+.brand-list__item { display: flex; align-items: center; justify-content: center; min-width: 0; height: 88px; }
+.brand-list__item img { display: block; width: 96px; max-width: 85%; height: 60px; object-fit: contain; }
+
+@media (max-width: 900px) {
+  .brand-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 
 .contact__card { padding: 74px; display: grid; grid-template-columns: 1fr 410px; gap: 80px; border-radius: 26px; background: var(--ink); color: white; overflow: hidden; position: relative; }
-.contact__card::before { content: ''; position: absolute; width: 310px; height: 310px; left: -160px; bottom: -190px; border: 50px solid rgba(215,53,50,.65); border-radius: 50%; }
+.contact__card::before { content: ''; position: absolute; z-index: 0; pointer-events: none; width: 310px; height: 310px; left: -160px; bottom: -190px; border: 50px solid rgba(215,53,50,.65); border-radius: 50%; }
+.contact__card > div { position: relative; z-index: 1; }
 .eyebrow--light { color: #aeb6bb; }
 .contact__card h2 { position: relative; }
 .contact__card > div > p:last-child { max-width: 570px; margin: 25px 0 0; color: #b9c0c5; line-height: 1.7; }
@@ -242,8 +248,9 @@ body:has(.messenger-dialog[open]) { overflow: hidden; }
   .about__circle { left: 10px; top: 30px; transform: scale(.68); }
   .about__stamp { width: 124px; height: 124px; }
   .about__stamp strong { font-size: 41px; }
-  .brand-list { gap: 16px 24px; }
-  .brand-list span { font-size: 15px; }
+  .brand-list { gap: 16px 18px; }
+  .brand-list__item { height: 64px; }
+  .brand-list__item img { height: 48px; }
   .contact { padding-bottom: 76px; }
   .contact__card { width: 100%; border-radius: 0; padding: 48px 22px; }
   .footer { padding-bottom: 104px; }
